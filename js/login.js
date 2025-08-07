@@ -3,6 +3,8 @@ const button = document.querySelector('.login__button');
 const form = document.querySelector('.login-form');
 
 const validateInput = ({ target }) => {
+    // A DESESTRUTURAÇÃO '{ target }' PEGA O ELEMENTO QUE DISPAROU O EVENTO ('input')
+
     if (target.value.length > 2) {
         button.removeAttribute('disabled');
         return;
@@ -12,7 +14,7 @@ const validateInput = ({ target }) => {
 }
 
 const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // IMPEDE COMPORTAMENTO PADRÃO DO FORMULÁRIO (RECARREGAR A PÁGINA)
 
     localStorage.setItem('player', input.value);
     window.location = './pages/game.html';

@@ -33,6 +33,11 @@ header{
 }
 
 .card{
+    /*
+      DEFINE A PROPORÇÃO FIXA DA CARTA COMO 3 DE LARGURA PARA 4 DE ALTURA
+
+      COM BASE NO 'width: 100%', O NAVEGADOR CALCULA A 'height' AUTOMATICAMENTE PARA MANTER ESSA FORMA DE "RETRATO", GARANTINDO RESPONSIVIDADE
+    */
     aspect-ratio: 3/4;
     width: 100%;
     border-radius: 5px;
@@ -59,6 +64,11 @@ header{
 
 .back{
     background-image: url(../images/back.png);
+    /* 
+      GARANTE QUE O VERSO DESTA FACE NÃO SEJA VISÍVEL DURANTE A ROTAÇÃO 3D, TORNANDO-SE TRANSPARENTE EM VEZ DE MOSTRAR UMA IMAGEM ESPELHADA
+ 
+      ESSENCIAL PARA QUE A OUTRA FACE ('front') POSSA SER REVELADA SEM INTERFERÊNCIA
+    */
     backface-visibility: hidden;
 }
 

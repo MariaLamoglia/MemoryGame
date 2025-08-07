@@ -16,6 +16,7 @@ const characters = [
     'summer',
 ];
 
+// FUNÇÃO PARA CRIAR ELEMENTOS HTML DE FORMA FÁCIL
 const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
@@ -59,6 +60,7 @@ const checkCards = () => {
 
 const revealCard = ({ target }) => {
     if (target.parentNode.className.includes('reveal-card')) {
+        // 'target.parentNode' = É O ELEMENTO 'card' ('target' É A FACE DA CARTA)
         return;
     }
 
@@ -73,8 +75,6 @@ const revealCard = ({ target }) => {
 
         checkCards();
     }
-
-    
 }
 
 const createCard = (character) => {
@@ -94,10 +94,13 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
+    // DUPLICA O ARRAY DE PERSONAGENS PARA CRIAR OS PARES
     const duplicateCharacters = [ ...characters, ...characters ];
 
+    // EMBARALHA O ARRAY DUPLICADO DE FORMA ALEATÓRIA
     const shuffeledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
+    // PARA CADA PERSONAGEM NO ARRAY EMBARALHADO, CRIA UMA CARTA E A ADD AO GRID
     shuffeledArray.forEach((character) => {
         const card = createCard(character);
         grid.appendChild(card)
@@ -108,24 +111,20 @@ const startTimer = () => {
     let totalSeconds = 0;
 
     loop = setInterval(() => {
-        totalSeconds++;
+        totalSeconds++; // INCREMENTA O TEMPO
 
+        // CONVERTE O TOTAL DE SEGUNDOS PARA O FORMATO M:S
         const minutes = Math.floor(totalSeconds / 60);
         const seconds = totalSeconds % 60;
 
+        // FORMATA OS SEGUNDOS PARA QUE SEMPRE TENHAM 2 DÍGITOS
         const formattedSeconds = String(seconds).padStart(2, '0');
 
         timer.innerHTML = `${minutes}:${formattedSeconds}`;
     }, 1000);
 }
 
-// const startTimer = () => {
-//     this.loop = setInterval(() => {
-//         const currentTime = +timer.innerHTML;
-//         timer.innerHTML = currentTime + 1;
-//     }, 1000);
-// }
-
+// FUNÇÃO PRINCIPAL QUANDO A PÁGINA TERMINA DE CARREGAR
 window.onload = () => {
     spanPlayer.innerHTML = localStorage.getItem('player');
 
