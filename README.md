@@ -1,10 +1,5 @@
 # Memory Game | Rick and Morty Edition 🧠
 
-![GitHub language count](https://img.shields.io/github/languages/count/MariaLamoglia/MemoryGame?color=%2300B5CC)
-![GitHub top language](https://img.shields.io/github/languages/top/MariaLamoglia/MemoryGame?color=%23F25022)
-![GitHub last commit](https://img.shields.io/github/last-commit/MariaLamoglia/MemoryGame?color=%23E4405F)
-![License](https://img.shields.io/github/license/MariaLamoglia/MemoryGame?color=%23228B22)
-
 Wubba Lubba Dub Dub! Entre neste portal para uma dimensão onde sua memória será testada. Este é um clássico Jogo da Memória com uma temática interdimensional da série Rick and Morty. Encontre todos os pares de personagens no menor tempo possível!
 
 ---
